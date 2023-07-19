@@ -5,6 +5,7 @@ import Home from "./View/Home";
 import Laws from "./View/Laws";
 import Board from "./View/Board";
 import News from "./View/News";
+import Footer from "./Main/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/news' element={<News/>} />
         </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }
