@@ -6,8 +6,8 @@ import { useState } from "react";
 function Preview() {
   const [section, setSection] = useState("hot");
   return (
-    <div>
-      <h2>게시판</h2>
+    <div className="previewContainer">
+      <h2 className="cHead">게시판</h2>
       <div className="bar">
         <div className="cType">
           <Link
