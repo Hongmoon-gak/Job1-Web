@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 function NavUser(){
     return(
-        <div>
+        <div className="navuser-container">
             <Link to={'/login'} >로그인</Link>
             <div>
-                <Link to={'/mypage'}></Link>
+                <Link to={'/mypage'}>마이페이지</Link>
             </div>
         </div>
     )
