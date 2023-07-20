@@ -1,4 +1,4 @@
-import "./PrevArt.css";
+import "./Preview.css";
 
 function PrevArt(props) {
   return (

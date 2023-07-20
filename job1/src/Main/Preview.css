@@ -7,7 +7,7 @@
   display: flex;
 }
 
-.hotCommu {
+.selectedBtn {
   color: #8d8ba7;
   text-align: center;
   font-family: DM Sans;
@@ -17,9 +17,10 @@
   line-height: 1.5rem; /* 150% */
 
   padding: 0 1rem;
+  text-decoration: none;
 }
 
-.newCommu {
+.Btn {
   color: #000;
   text-align: center;
   font-family: DM Sans;
@@ -29,6 +30,7 @@
   line-height: 1.5rem; /* 150% */
 
   padding: 0 1rem;
+  text-decoration: none;
 }
 
 .cWriteBtn {
@@ -45,4 +47,64 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem; /* 150% */
+}
+
+/* PrevArt */
+.cArticle {
+  display: flex;
+  justify-content: space-between;
+
+  /*width: 54.3125rem;
+  height: 3rem;
+  flex-shrink: 0;*/
+}
+
+.cTitle {
+  color: #000;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.cLikes {
+  color: #920000;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.cDate {
+  color: #8a8a8a;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.cTitleHref {
+  color: #000;
+}
+
+.cTitleHref:link {
+  text-decoration: none;
+}
+
+.cTitleHref:visited {
+  text-decoration: none;
+}
+
+.cTitleHref:hover {
+  text-decoration: underline;
+}
+
+.cTitleHref:active {
+  text-decoration: underline;
 }
