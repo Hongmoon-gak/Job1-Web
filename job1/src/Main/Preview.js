@@ -1,10 +1,14 @@
 import PrevCont from "./PrevCont";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Preview.css";
 import { useState } from "react";
 
 function Preview() {
   const [section, setSection] = useState("hot");
+  const navigate = useNavigate();
+  const navigateToWrite = () => {
+    navigate("./write");
+  };
   return (
     <div className="previewContainer">
       <h2 className="cHead">게시판</h2>
@@ -29,7 +33,9 @@ function Preview() {
             NEW
           </Link>
         </div>
-        <button className="cWriteBtn">글쓰기</button>
+        <button className="cWriteBtn" onClick={navigateToWrite}>
+          글쓰기
+        </button>
       </div>
       <hr />
       <PrevCont />
