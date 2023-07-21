@@ -24,6 +24,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );
