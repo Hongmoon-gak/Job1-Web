@@ -1,15 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
+
 .previewContainer {
   width: 54.3125rem;
   margin: 0 auto;
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
 }
 
 .cHead {
   color: #000;
-  font-family: DM Sans;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.5rem; /* 100% */
+  line-height: 1.5rem;
+
+  margin-bottom: 2rem;
 }
 
 .bar {
@@ -25,11 +30,10 @@
 .selectedBtn {
   color: #8d8ba7;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 
   padding: 0 1rem;
   text-decoration: none;
@@ -38,11 +42,10 @@
 .Btn {
   color: #000;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 
   padding: 0 1rem;
   text-decoration: none;
@@ -57,17 +60,15 @@
 
   color: #fff;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 }
 
 /* PrevArt */
 .cArticle {
   display: flex;
-  /* justify-content: space-between; */
   width: 54.3125rem;
   height: 3rem;
   flex-shrink: 0;
@@ -76,11 +77,10 @@
 .cTitle {
   color: #000;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 
   padding-left: 1.61rem;
 }
@@ -88,11 +88,10 @@
 .cLikes {
   color: #920000;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 
   padding-left: 35rem;
 }
@@ -100,11 +99,10 @@
 .cDate {
   color: #8a8a8a;
   text-align: center;
-  font-family: DM Sans;
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.5rem; /* 150% */
+  line-height: 1.5rem;
 
   padding-left: 10rem;
 }
