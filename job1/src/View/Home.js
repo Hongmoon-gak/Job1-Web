@@ -1,4 +1,4 @@
-import Preview from "../Main/Preview";
+import Preview from "../Main/Preview/Preview";
 import MoreInfo from "../Main/MoreInfo";
 
 function Home(){
