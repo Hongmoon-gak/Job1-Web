@@ -1,14 +1,14 @@
 import Preview from "../Main/Preview";
-import Tag from "../Tags/Tag";
+import MoreInfo from "../Main/MoreInfo";
 
-function Home() {
-  return (
-    <div>
-      home
-	  <Tag/>
-      <Preview />
-    </div>
-  );
+function Home(){
+    return(
+        <div>
+            home
+            <Preview />
+            <MoreInfo/>
+        </div>
+    )
 }
 
 export default Home;
