@@ -1,40 +1,29 @@
 import PrevCont from "./PrevCont";
-import { Link, useNavigate } from "react-router-dom";
+import PrevCommOp from "./PrevCommOp";
+import { useNavigate } from "react-router-dom";
 import "./Preview.css";
-import { useState } from "react";
 
-function Preview() {
-  const [section, setSection] = useState("hot");
+function Preview(props) {
   const navigate = useNavigate();
   const navigateToWrite = () => {
     navigate("./write");
   };
+  const selectType = () => {
+    return props.title == "게시판" ? (
+      <PrevCommOp />
+    ) : (
+      <p className="resultNum">
+        총 {props.resultNum}건의 검색 결과가 있습니다.
+      </p>
+    );
+  };
   return (
     <div className="previewContainer">
-      <h2 className="cHead">게시판</h2>
+      <h2 className="cHead">{props.title}</h2>
       <div className="bar">
-        <div className="cType">
-          <Link
-            to={"#"}
-            className={section === "hot" ? "selectedBtn" : "Btn"}
-            onClick={() => {
-              setSection("hot");
-            }}
-          >
-            HOT
-          </Link>
-          <Link
-            to={"#"}
-            className={section === "new" ? "selectedBtn" : "Btn"}
-            onClick={() => {
-              setSection("new");
-            }}
-          >
-            NEW
-          </Link>
-        </div>
+        {selectType()}
         <button className="cWriteBtn" onClick={navigateToWrite}>
-          글쓰기
+          {props.btn}
         </button>
       </div>
       <hr />

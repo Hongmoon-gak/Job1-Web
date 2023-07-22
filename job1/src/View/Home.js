@@ -1,14 +1,14 @@
-import Preview from "../Main/Preview/Preview";
+import PreviewComm from "../Main/Preview/PreviewComm";
 import MoreInfo from "../Main/MoreInfo";
 
-function Home(){
-    return(
-        <div>
-            home
-            <Preview />
-            <MoreInfo/>
-        </div>
-    )
+function Home() {
+  return (
+    <div>
+      home
+      <PreviewComm />
+      <MoreInfo />
+    </div>
+  );
 }
 
 export default Home;

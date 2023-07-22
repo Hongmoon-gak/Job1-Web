@@ -51,6 +51,13 @@
   text-decoration: none;
 }
 
+.resultNum {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.5rem; /* 150% */
+}
+
 .cWriteBtn {
   width: 5.5625rem;
   height: 2.625rem;
