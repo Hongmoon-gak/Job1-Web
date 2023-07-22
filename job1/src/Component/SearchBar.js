@@ -3,7 +3,6 @@ import { post } from "./DataSample";
 import Table from "./TestCp";
 
 import "./SearchBar.css"
-import Icon from "../Image/Search.png";
 
 function SearchBar(){
     const [query, setQuery] = useState("");
@@ -19,7 +18,7 @@ function SearchBar(){
     
     return(
         <div className="search-container">
-            <img className="search-icon" src={Icon} />
+            <img className="search-icon" src="/Images/Search.png" />
             <input
                 className="search-input"
                 type="text" 
