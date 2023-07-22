@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function NavItems(){
     return(
-        <div>
+        <div className="navitems-container">
             <div>
                 <Link to={'/'}>Job 일</Link>
             </div>
