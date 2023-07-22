@@ -7,7 +7,7 @@ import Icon from "../Image/Search.png";
 
 function SearchBar(){
     const [query, setQuery] = useState("");
-    const keys = ["title", "content"]
+    const keys = ["title", "content"];
     const onChange = (e) => {
         setQuery(e.target.value.toLowerCase());
     }
@@ -16,19 +16,24 @@ function SearchBar(){
             keys.some((key) => item[key].toLowerCase().includes(query))
         );
     };
+    const submit = (e) => {
+        e.preventDefault();
+
+        console.log(query);
+    }
     
     return(
-        <div className="search-container">
-            <img className="search-icon" src={Icon} />
+        <form className="search-container" onSubmit={submit} >
+            <img className="search-icon" src={Icon} alt="search icon" />
             <input
                 className="search-input"
                 type="text" 
                 value={query}
-                onChange={onChange} 
+                onChange={onChange}
                 placeholder="나의 어려움은 무엇인가요?" 
             />
             {/* <Table data={search(post)} /> */}
-        </div>
+        </form>
     )
 }
 
