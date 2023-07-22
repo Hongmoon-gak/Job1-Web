@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Footer(){
     return(
         <FooterContainer>
-            <FooterText>Copyrights © 잡일 | All Rights Reserved</FooterText>
+            <FooterText>Copyrights © Hong-moon-gak | All Rights Reserved</FooterText>
         </FooterContainer>
     )
 }
