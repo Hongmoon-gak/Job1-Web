@@ -4,7 +4,6 @@ import { post } from "./DataSample";
 import Table from "./TestCp";
 
 import "./SearchBar.css"
-import Icon from "../Image/Search.png";
 
 function SearchBar(){
     const [query, setQuery] = useState("");

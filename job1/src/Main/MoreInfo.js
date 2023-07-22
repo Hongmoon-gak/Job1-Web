@@ -12,17 +12,17 @@ function MoreInfo(){
             </div>
             <MoreInfoContainer>
                 <InfoCard
-                    img=''
+                    img='/Images/MoreInfo1.png'
                     name='고용노동부 고객 상담 센터'
                     tel='1350'
                 />
                 <InfoCard
-                    img=''
+                    img='/Images/MoreInfo2.png'
                     name='직장 내 괴롭힘 상담센터'
                     tel='1522-9000'
                 />
                 <InfoCard
-                    img=''
+                    img='/Images/MoreInfo3.png'
                     name='근로 복지 공단'
                     tel='1588-0075'
                 />
