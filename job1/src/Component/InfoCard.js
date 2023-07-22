@@ -1,14 +1,17 @@
 
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function InfoCard(props){
     return(
         <Card>
-            <Img src={props.img} alt={props.name} />
-            <Text>
-                <Institution>{props.name}</Institution>
-                <Tel href='tel:{props.tel}' >☎️ Tel: {props.tel}</Tel>
-            </Text>
+            <InfoLink to={props.url} target="_blank">
+                <Img src={props.img} alt={props.name} />
+                <Text>
+                    <Institution>{props.name}</Institution>
+                    <Tel href='tel:{props.tel}' >☎️ Tel: {props.tel}</Tel>
+                </Text>
+            </InfoLink>
         </Card>
     )
 }
@@ -23,6 +26,11 @@ const Card=styled.div`
     border-radius: 1.5rem;
     background: var(--neutral-colors-white, #FFF);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.12);
+`
+
+const InfoLink=styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `
 
 const Text=styled.div`
