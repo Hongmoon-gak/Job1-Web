@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { post } from "./DataSample";
 import Table from "./TestCp";
 
@@ -16,9 +17,12 @@ function SearchBar(){
             keys.some((key) => item[key].toLowerCase().includes(query))
         );
     };
+
+    const navigate = useNavigate();
     const submit = (e) => {
         e.preventDefault();
-
+        // 검색 결과 시 이동할 url (임시로 지정)
+        navigate(`/search?query=${encodeURIComponent(query)}`);
         console.log(query);
     }
     
