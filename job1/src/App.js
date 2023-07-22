@@ -11,6 +11,7 @@ import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import Tag from "./Tags/Tag";
 import Search from "./View/Search";
+import SearchResult from "./View/SearchResult";
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
+          <Route path="/result" element={<SearchResult />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );

@@ -9,7 +9,7 @@ function Preview(props) {
     navigate("./write");
   };
   const selectType = () => {
-    return props.title == "게시판" ? (
+    return props.type == "home" ? (
       <PrevCommOp />
     ) : (
       <p className="resultNum">
