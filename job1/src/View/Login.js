@@ -1,8 +1,9 @@
+import SocialKakao from '../Component/LoginComponent'
 
 function Login(){
     return(
         <div>
-            로그인
+            <SocialKakao/>
         </div>
     )
 }
