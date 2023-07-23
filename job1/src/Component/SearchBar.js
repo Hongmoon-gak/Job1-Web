@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { post } from "./DataSample";
 import Table from "./TestCp";
 
-import "./SearchBar.css"
-
 function SearchBar(){
     const [query, setQuery] = useState("");
     const keys = ["title", "content"];
@@ -27,7 +25,7 @@ function SearchBar(){
     
     return(
         <form className="search-container" onSubmit={submit} >
-            <img className="search-icon" src={Icon} alt="search icon" />
+            <img className="search-icon" src='/Images/Search.png' alt="search icon" />
             <input
                 className="search-input"
                 type="text" 
