@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { post } from "./DataSample";
 import Table from "./TestCp";
 
+import "./SearchBar.css"
+
 function SearchBar(){
     const [query, setQuery] = useState("");
     const keys = ["title", "content"];
