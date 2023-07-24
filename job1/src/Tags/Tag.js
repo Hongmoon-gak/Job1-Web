@@ -6,6 +6,7 @@ const TagsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 3rem;
 `;
 
 export default function Tag(){
