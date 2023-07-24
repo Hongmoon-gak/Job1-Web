@@ -18,7 +18,7 @@ function Preview(props) {
     );
   };
   const selectBottom = () => {
-    return props.type === "preview" ? (
+    return props.type !== "home" ? (
       <div className="previewBottom">
         <Link to={"#"} className="moreResult">
           검색 결과 더 보기
@@ -41,7 +41,7 @@ function Preview(props) {
         {selectBtn()}
       </div>
       <hr />
-      <PrevCont />
+      <PrevCont type={props.type} />
       <hr />
       {selectBottom()}
     </div>

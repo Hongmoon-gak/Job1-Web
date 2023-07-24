@@ -1,12 +1,13 @@
 import "./Preview.css";
+import { Link } from "react-router-dom";
 
 function PrevArt(props) {
   return (
     <div className="cArticle">
       <div className="cTitle">
-        <a href={props.href} className="cTitleHref">
-          <p>{props.title}</p>
-        </a>
+        <Link to={`/${props.type}/${props.link}`} className="cTitleHref">
+          {props.title}
+        </Link>
       </div>
       <div className="cLikes">
         <img

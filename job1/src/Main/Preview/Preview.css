@@ -34,7 +34,7 @@ hr {
 }
 
 .selectedBtn {
-  /*background-color: #e4eee3;*/
+  background-color: #e4eee3;
   color: #31892f;
   text-align: center;
   font-size: 1rem;
@@ -42,7 +42,7 @@ hr {
   font-weight: 700;
   line-height: 3rem;
 
-  width: 6.258rem;
+  width: 4.258rem;
 
   padding: 0 1rem;
   text-decoration: none;
@@ -57,7 +57,7 @@ hr {
   font-weight: 700;
   line-height: 3rem;
 
-  width: 6.258rem;
+  width: 4.258rem;
 
   padding: 0 1rem;
   text-decoration: none;
@@ -105,6 +105,7 @@ hr {
 
   position: absolute;
   left: 1.61rem;
+  top: 0.75rem;
 }
 
 .cLikes {
