@@ -9,7 +9,7 @@ function Preview(props) {
     navigate("./write");
   };
   const selectType = () => {
-    return props.type == "home" ? (
+    return props.type === "home" ? (
       <PrevCommOp />
     ) : (
       <p className="resultNum">
