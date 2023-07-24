@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
 
+hr {
+  margin: 0 auto;
+}
+
 .previewContainer {
   width: 54.3125rem;
   margin: 0 auto;
@@ -134,6 +138,25 @@
   text-decoration: underline;
 }
 
-hr {
-  margin: 0 auto;
+.previewBottom {
+  width: 54.25rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+  background: #f4f4f4;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.12);
+
+  text-align: center;
+
+  margin-top: 1rem;
+}
+
+.moreResult {
+  color: #000;
+  font-family: DM Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.5rem;
+
+  text-decoration: none;
 }

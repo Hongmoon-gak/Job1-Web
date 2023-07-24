@@ -1,6 +1,6 @@
 import PrevCont from "./PrevCont";
 import PrevCommOp from "./PrevCommOp";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Preview.css";
 
 function Preview(props) {
@@ -17,18 +17,33 @@ function Preview(props) {
       </p>
     );
   };
+  const selectBottom = () => {
+    return props.type === "preview" ? (
+      <div className="previewBottom">
+        <Link to={"#"} className="moreResult">
+          검색 결과 더 보기
+        </Link>
+      </div>
+    ) : null;
+  };
+  const selectBtn = () => {
+    return props.type === "home" ? (
+      <button className="cWriteBtn" onClick={navigateToWrite}>
+        {props.btn}
+      </button>
+    ) : null;
+  };
   return (
     <div className="previewContainer">
       <h2 className="cHead">{props.title}</h2>
       <div className="bar">
         {selectType()}
-        <button className="cWriteBtn" onClick={navigateToWrite}>
-          {props.btn}
-        </button>
+        {selectBtn()}
       </div>
       <hr />
       <PrevCont />
       <hr />
+      {selectBottom()}
     </div>
   );
 }

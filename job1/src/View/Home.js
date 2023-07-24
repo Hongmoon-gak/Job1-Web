@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       home
-      <Preview title="게시판" btn="글쓰기" type="home" />;
+      <Preview title="게시판" btn="글쓰기" type="home" />
       <MoreInfo />
     </div>
   );
