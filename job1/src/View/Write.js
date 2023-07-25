@@ -7,10 +7,11 @@ function Write() {
     title: '',
     content: '',
     author: '',
+    date:'',
     likes: '0'
   });
 
-  const { title, content, author, likes } = post;
+  const { title, content, author, date, likes } = post;
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -23,11 +24,24 @@ function Write() {
   const navigate = useNavigate();
   const submit = (e) => {
     e.preventDefault();
+    if (title === '') { // 제목, 내용 입력되지 않은 경우
+      alert('제목을 입력해주세요.');
+      return;
+    } else if(content === '') {
+      alert('내용을 입력해주세요');
+      return;
+    }
+
+    const currentTime = new Date();
+    setPost({
+      ...post,
+      date: currentTime,
+    })
     alert('등록되었습니다!');
     navigate('/community');
-    console.log(post);
+    console.log({ ...post, date: currentTime });
   };
-
+  
   const cancel = () => {
     navigate(`/community`);
   };
