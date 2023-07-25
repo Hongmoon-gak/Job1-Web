@@ -17,20 +17,23 @@ function Preview(props) {
         return data;
       }
     })
-    .map((data) => {
-      return (
-        <div className="cArtView">
-          <PrevArt
-            title={data.title}
-            type={props.type}
-            link=""
-            likes={data.likes}
-            date={data.date}
-          />
-          <hr />
-        </div>
-      );
+    .sort(function (a, b) {
+      return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
     });
+  const itemSorted = items.slice(0, 6).map((data) => {
+    return (
+      <div className="cArtView">
+        <PrevArt
+          title={data.title}
+          type={props.type}
+          link=""
+          likes={data.likes}
+          date={data.date}
+        />
+        <hr />
+      </div>
+    );
+  });
   const navigate = useNavigate();
   const navigateToWrite = () => {
     navigate("./write");
@@ -45,7 +48,10 @@ function Preview(props) {
   const selectBottom = () => {
     return props.type !== "home" ? (
       <div className="previewBottom">
-        <Link to={`./${props.type}/${props.query}`} className="moreResult">
+        <Link
+          to={`./${props.type}?query=${props.query}`}
+          className="moreResult"
+        >
           검색 결과 더 보기
         </Link>
       </div>
@@ -72,7 +78,7 @@ function Preview(props) {
         {selectBtn()}
       </div>
       <hr />
-      {items}
+      {itemSorted}
       {selectBottom()}
     </div>
   );
