@@ -24,7 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
-          <Route path="/result" element={<SearchResult />} />
+          <Route path="/search" element={<SearchResult />} />
         </Routes>
         <Footer />
       </Router>

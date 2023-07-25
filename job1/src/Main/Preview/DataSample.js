@@ -1,0 +1,42 @@
+export const post = [
+  {
+    id: 1,
+    title: "취업",
+    likes: "50",
+    date: "08. 01.",
+    type: "laws",
+    contents: "취약계층이 어쩌구 저쩌구..",
+  },
+  {
+    id: 2,
+    title: "실업",
+    likes: "23",
+    date: "08. 01.",
+    type: "laws",
+    contents: "취약계층이 어쩌구 저쩌구..",
+  },
+  {
+    id: 3,
+    title: "보험",
+    likes: "1",
+    date: "08. 01.",
+    type: "news",
+    contents: "취약계층이 어쩌구 저쩌구..",
+  },
+  {
+    id: 4,
+    title: "임금",
+    likes: "46",
+    date: "08. 02.",
+    type: "community",
+    contents: "취약계층이 어쩌구 저쩌구..",
+  },
+  {
+    id: 5,
+    title: "직장 내 괴롭힘",
+    likes: "90",
+    date: "08. 02.",
+    type: "community",
+    contents: "취약계층이 어쩌구 저쩌구..",
+  },
+];

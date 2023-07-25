@@ -1,9 +1,36 @@
-import PrevCont from "./PrevCont";
+import PrevArt from "./PrevArt";
 import PrevCommOp from "./PrevCommOp";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "./Preview.css";
 
+import { post } from "./DataSample";
+
 function Preview(props) {
+  const items = post
+    .filter((data) => {
+      if (
+        (data.title.toLowerCase().includes(props.query) ||
+          data.contents.toLowerCase().includes(props.query)) &&
+        data.type === props.type
+      ) {
+        return data;
+      }
+    })
+    .map((data) => {
+      return (
+        <div className="cArtView">
+          <PrevArt
+            title={data.title}
+            type={props.type}
+            link=""
+            likes={data.likes}
+            date={data.date}
+          />
+          <hr />
+        </div>
+      );
+    });
   const navigate = useNavigate();
   const navigateToWrite = () => {
     navigate("./write");
@@ -12,15 +39,13 @@ function Preview(props) {
     return props.type === "home" ? (
       <PrevCommOp />
     ) : (
-      <p className="resultNum">
-        총 {props.resultNum}건의 검색 결과가 있습니다.
-      </p>
+      <p className="resultNum">총 {items.length}건의 검색 결과가 있습니다.</p>
     );
   };
   const selectBottom = () => {
     return props.type !== "home" ? (
       <div className="previewBottom">
-        <Link to={"#"} className="moreResult">
+        <Link to={`./${props.type}/${props.query}`} className="moreResult">
           검색 결과 더 보기
         </Link>
       </div>
@@ -29,20 +54,25 @@ function Preview(props) {
   const selectBtn = () => {
     return props.type === "home" ? (
       <button className="cWriteBtn" onClick={navigateToWrite}>
-        {props.btn}
+        글쓰기
       </button>
     ) : null;
   };
+  console.log(props.query);
+  console.log(post);
+  /* 
+  const [searchWord, setSearch] = useState(props.query);
+ */
+
   return (
     <div className="previewContainer">
-      <h2 className="cHead">{props.title}</h2>
+      <h2 className="cHead">{props.typeTitle}</h2>
       <div className="bar">
         {selectType()}
         {selectBtn()}
       </div>
       <hr />
-      <PrevCont type={props.type} />
-      <hr />
+      {items}
       {selectBottom()}
     </div>
   );
