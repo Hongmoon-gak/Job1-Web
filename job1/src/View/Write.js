@@ -4,14 +4,16 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 function Write() {
   const [post, setPost] = useState({
+    id:'',
     title: '',
     content: '',
-    author: '',
+    author: '', // 사용자 계정 토큰 받아오기
     date:'',
-    likes: '0'
+    likes: '0',
+    
   });
 
-  const { title, content, author, date, likes } = post;
+  const { id, title, content, author, date, likes } = post;
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -37,12 +39,13 @@ function Write() {
       ...post,
       date: currentTime,
     })
-    alert('등록되었습니다!');
+    alert('등록되었습니다');
     navigate('/community');
     console.log({ ...post, date: currentTime });
   };
-  
+
   const cancel = () => {
+    alert('취소되었습니다')
     navigate(`/community`);
   };
 
