@@ -1,5 +1,4 @@
 import PrevArt from "./PrevArt";
-import PrevCommOp from "./PrevCommOp";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Preview.css";
@@ -7,49 +6,82 @@ import "./Preview.css";
 import { post } from "./DataSample";
 
 function Preview(props) {
-  const items = post
-    .filter((data) => {
-      if (
-        (data.title.toLowerCase().includes(props.query) ||
-          data.contents.toLowerCase().includes(props.query)) &&
-        data.type === props.type
-      ) {
-        return data;
-      }
-    })
-    .sort(function (a, b) {
-      return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
-    });
-  const itemSorted = items.slice(0, 6).map((data) => {
-    return (
-      <div className="cArtView">
-        <PrevArt
-          title={data.title}
-          type={props.type}
-          link=""
-          likes={data.likes}
-          date={data.date}
-        />
-        <hr />
-      </div>
-    );
+  const [section, setSection] = useState("hot");
+  const item = post.filter((data) => {
+    if (data.type === props.type) {
+      return data;
+    }
   });
+  const itemS = item.filter((data) => {
+    if (
+      (data.title.toLowerCase().includes(props.query) ||
+        data.contents.toLowerCase().includes(props.query)) &&
+      data.type === props.type
+    ) {
+      return data;
+    }
+  });
+  const itemC = post.filter((data) => {
+    if (Number(data.likes) > 50) return data;
+  });
+
+  const itemSorted = (
+    props.view !== "home" ? itemS : section === "hot" ? itemC : item
+  )
+    .sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    })
+    .slice(0, 6)
+    .map((data) => {
+      return (
+        <div className="cArtView">
+          <PrevArt
+            title={data.title}
+            type={props.type}
+            link=""
+            likes={data.likes}
+            date={data.date}
+          />
+          <hr />
+        </div>
+      );
+    });
+
   const navigate = useNavigate();
   const navigateToWrite = () => {
     navigate("./write");
   };
   const selectType = () => {
-    return props.type === "home" ? (
-      <PrevCommOp />
+    return props.view === "home" ? (
+      <div className="cType">
+        <Link
+          to={"#"}
+          className={section === "hot" ? "selectedBtn" : "Btn"}
+          onClick={() => {
+            setSection("hot");
+          }}
+        >
+          HOT
+        </Link>
+        <Link
+          to={"#"}
+          className={section === "new" ? "selectedBtn" : "Btn"}
+          onClick={() => {
+            setSection("new");
+          }}
+        >
+          NEW
+        </Link>
+      </div>
     ) : (
-      <p className="resultNum">총 {items.length}건의 검색 결과가 있습니다.</p>
+      <p className="resultNum">총 {itemS.length}건의 검색 결과가 있습니다.</p>
     );
   };
   const selectBottom = () => {
-    return props.type !== "home" ? (
+    return props.view !== "home" ? (
       <div className="previewBottom">
         <Link
-          to={`./${props.type}?query=${props.query}`}
+          to={`./${props.view}?query=${props.query}`}
           className="moreResult"
         >
           검색 결과 더 보기
@@ -58,17 +90,12 @@ function Preview(props) {
     ) : null;
   };
   const selectBtn = () => {
-    return props.type === "home" ? (
+    return props.view === "home" ? (
       <button className="cWriteBtn" onClick={navigateToWrite}>
         글쓰기
       </button>
     ) : null;
   };
-  console.log(props.query);
-  console.log(post);
-  /* 
-  const [searchWord, setSearch] = useState(props.query);
- */
 
   return (
     <div className="previewContainer">

@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <Search />
-      <Preview title="게시판" type="home" />
+      <Preview typeTitle="게시판" type="community" view="home" />
       <MoreInfo />
     </div>
   );

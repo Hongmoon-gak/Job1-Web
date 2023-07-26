@@ -110,7 +110,7 @@ hr {
 
 .cLikes {
   position: absolute;
-  left: 35rem;
+  left: 36rem;
   display: flex;
 }
 
@@ -123,6 +123,10 @@ hr {
   top: 0.75rem;
 }
 
+.cLikeIconNone {
+  display: none;
+}
+
 .cLikeNum {
   color: #cc4e4f;
   text-align: center;
@@ -130,6 +134,10 @@ hr {
   font-style: normal;
   font-weight: 500;
   line-height: 1.5rem;
+}
+
+.cLikeNumNone {
+  display: none;
 }
 
 .cDate {
@@ -141,7 +149,7 @@ hr {
   line-height: 1.5rem;
 
   position: absolute;
-  left: 48.69rem;
+  left: 46.69rem;
 }
 
 .cTitleHref {

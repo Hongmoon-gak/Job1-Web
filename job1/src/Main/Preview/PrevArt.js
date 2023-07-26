@@ -1,7 +1,11 @@
 import "./Preview.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function PrevArt(props) {
+  const cLikeIcon = props.type !== "community" ? "cLikeIconNone" : "cLikeIcon";
+  const cLikeNum = props.type !== "community" ? "cLikeNumNone" : "cLikeNum";
+
   return (
     <div className="cArticle">
       <div className="cTitle">
@@ -13,9 +17,9 @@ function PrevArt(props) {
         <img
           src="/Images/CommunityLike.png"
           alt="likes"
-          className="cLikeIcon"
+          className={cLikeIcon}
         ></img>
-        <p className="cLikeNum">{props.likes}</p>
+        <p className={cLikeNum}>{props.likes}</p>
       </div>
       <p className="cDate">{props.date}</p>
     </div>
