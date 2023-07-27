@@ -12,7 +12,7 @@ function Preview(props) {
       return data;
     }
   });
-  const itemS = item.filter((data) => {
+  const itemSearch = item.filter((data) => {
     if (
       (data.title.toLowerCase().includes(props.query) ||
         data.contents.toLowerCase().includes(props.query)) &&
@@ -21,12 +21,12 @@ function Preview(props) {
       return data;
     }
   });
-  const itemC = post.filter((data) => {
+  const itemComm = post.filter((data) => {
     if (Number(data.likes) >= 10) return data;
   });
 
   const itemSorted = (
-    props.view !== "home" ? itemS : section === "hot" ? itemC : item
+    props.view !== "home" ? itemSearch : section === "hot" ? itemComm : item
   )
     .sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
@@ -74,14 +74,16 @@ function Preview(props) {
         </Link>
       </div>
     ) : (
-      <p className="resultNum">총 {itemS.length}건의 검색 결과가 있습니다.</p>
+      <p className="resultNum">
+        총 {itemSearch.length}건의 검색 결과가 있습니다.
+      </p>
     );
   };
   const selectBottom = () => {
     return props.view !== "home" ? (
       <div className="previewBottom">
         <Link
-          to={`./${props.view}?query=${props.query}`}
+          to={`./${props.type}?query=${props.query}`}
           className="moreResult"
         >
           검색 결과 더 보기
