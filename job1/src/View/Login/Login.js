@@ -6,15 +6,15 @@ const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 250px;
+  margin-bottom: 350px;
 `;
 
 function Login(){
   return(
     <LoginContainer>
       <a href={KAKAO_AUTH_URL}>
-        <img src='/Images/kakao_login.png' alt='kakao' width='400'/>
+        <img src='/Images/kakao_login.png' alt='kakao' width='330'/>
       </a>
     </LoginContainer>
   );
