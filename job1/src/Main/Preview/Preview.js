@@ -22,7 +22,7 @@ function Preview(props) {
     }
   });
   const itemC = post.filter((data) => {
-    if (Number(data.likes) > 50) return data;
+    if (Number(data.likes) >= 10) return data;
   });
 
   const itemSorted = (

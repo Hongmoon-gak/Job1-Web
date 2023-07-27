@@ -35,7 +35,7 @@ export const post = [
   {
     id: 4,
     title: "임금",
-    likes: "35",
+    likes: "5",
     date: "2023-08-02",
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
@@ -46,7 +46,7 @@ export const post = [
   {
     id: 5,
     title: "직장 내 괴롭힘",
-    likes: "90",
+    likes: "10",
     date: "2023-08-01",
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
@@ -57,7 +57,7 @@ export const post = [
   {
     id: 6,
     title: "복리후생",
-    likes: "75",
+    likes: "25",
     date: "2023-09-01",
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
