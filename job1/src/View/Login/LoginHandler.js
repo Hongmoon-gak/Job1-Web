@@ -5,9 +5,11 @@ import axios from "axios";
 import { REDIRECT_URI } from './KakaoLoginData';
 
 function LoginHandeler(props){
+  // 인가 코드를 변수 'code'에 저장하는 코드
   const navigate = useNavigate();
   const code = new URL(window.location.href).searchParams.get("code");
   
+  // 백에게 변수 'code'를 전달하는 코드
   useEffect(() => {
     const kakaoLogin = async () => {
       await axios({
@@ -17,9 +19,9 @@ function LoginHandeler(props){
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
         },
-      }).then((res) => {
-        console.log(res);
-        localStorage.setItem("name", res.data.account.kakaoname);
+      }).then((res) => {  
+        console.log(res);  // 백에서 토큰이 넘어올 것이다.
+        localStorage.setItem("name", res.data.account.kakaoname);  
         navigate("/owner-question")
       });
     };
