@@ -9,6 +9,7 @@ import Footer from "./Main/Footer";
 import Login from "./View/Login/Login";
 import MyPage from "./View/MyPage";
 import Write from "./View/Write";
+import SearchResult from "./View/SearchResult";
 import LoginHandeler from "./View/Login/LoginHandler";
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
+          <Route path="/search" element={<SearchResult />} />
           <Route path="/kakaoLogin" element={<LoginHandeler />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );
