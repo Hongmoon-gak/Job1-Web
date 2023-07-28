@@ -1,11 +1,12 @@
 import React from 'react';
-import TagComponent from '../Component/TagComponent';
+import TagComponent from './TagComponent';
 import styled from 'styled-components';
 
 const TagsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 3rem;
 `;
 
 export default function Tag(){
