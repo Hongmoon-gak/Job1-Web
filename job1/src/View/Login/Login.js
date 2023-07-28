@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import { KAKAO_AUTH_URL, REST_API_KEY, REDIRECT_URI } from './KakaoLoginData';
 import LoginComponent from './LoginComponent';
 
 const LoginContainer = styled.div`
@@ -13,8 +12,10 @@ const LoginContainer = styled.div`
 
 function Login(){
   return(
-    <LoginComponent/>
+    <LoginContainer>
+      <LoginComponent/>
+    </LoginContainer>
   );
 }
-  
+
 export default Login
