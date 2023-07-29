@@ -1,6 +1,6 @@
 
 import SearchBar from "../Component/SearchBar";
-import Tag from "../Tags/Tag";
+import Tag from "../Component/Tag";
 
 import styled from 'styled-components';
 
