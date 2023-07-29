@@ -6,14 +6,14 @@ function Write() {
   const [post, setPost] = useState({
     id:'',
     title: '',
-    content: '',
+    contents: '',
     author: '', // 사용자 계정 토큰 받아오기
     date:'',
     likes: '0',
     
   });
 
-  const { id, title, content, author, date, likes } = post;
+  const { id, title, contents, author, date, likes } = post;
 
   const onChange = (e) => {
     const { name, value } = e.target;
