@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
 
 hr {
   margin: 0 auto;
@@ -193,4 +192,45 @@ hr {
   line-height: 4.5rem;
 
   text-decoration: none;
+}
+
+/**Pagination*/
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.pageBtn {
+  border: 1px solid #979797;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: 0 0.25rem;
+
+  text-align: center;
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 120% */
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[aria-current] {
+    background: #31892f;
+    color: #fff;
+    font-weight: bold;
+    cursor: revert;
+    transform: revert;
+  }
+}
+
+#setPageBtn {
+  background: #f0f4f0;
 }

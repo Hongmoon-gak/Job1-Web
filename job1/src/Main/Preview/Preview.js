@@ -4,9 +4,20 @@ import { useState } from "react";
 import "./Preview.css";
 
 import { post } from "./DataSample";
+import { useLocation } from "react-router-dom";
+
+import Pagination from "./Pagination";
 
 function Preview(props) {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get("query");
+
   const [section, setSection] = useState("hot");
+  const [page, setPage] = useState(1);
+  const limit = 7;
+  const offset = (page - 1) * limit;
+
   const item = post.filter((data) => {
     if (data.type === props.type) {
       return data;
@@ -14,8 +25,8 @@ function Preview(props) {
   });
   const itemSearch = item.filter((data) => {
     if (
-      (data.title.toLowerCase().includes(props.query) ||
-        data.contents.toLowerCase().includes(props.query)) &&
+      (data.title.toLowerCase().includes(query) ||
+        data.contents.toLowerCase().includes(query)) &&
       data.type === props.type
     ) {
       return data;
@@ -31,10 +42,10 @@ function Preview(props) {
     .sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     })
-    .slice(0, 6)
+    .slice(offset, offset + limit)
     .map((data) => {
       return (
-        <div className="cArtView">
+        <div className="cArtView" key={data.id}>
           <PrevArt
             title={data.title}
             type={props.type}
@@ -80,16 +91,20 @@ function Preview(props) {
     );
   };
   const selectBottom = () => {
-    return props.view !== "home" ? (
+    return props.view === "detail" ? (
+      <Pagination
+        total={itemSearch.length}
+        limit={limit}
+        page={page}
+        setPage={setPage}
+      />
+    ) : props.view === "home" ? null : (
       <div className="previewBottom">
-        <Link
-          to={`./${props.type}?query=${props.query}`}
-          className="moreResult"
-        >
+        <Link to={`/${props.type}?query=${query}`} className="moreResult">
           검색 결과 더 보기
         </Link>
       </div>
-    ) : null;
+    );
   };
   const selectBtn = () => {
     return props.view === "home" ? (
