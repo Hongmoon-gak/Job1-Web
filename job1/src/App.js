@@ -6,10 +6,11 @@ import Laws from "./View/Laws";
 import Community from "./View/Community";
 import News from "./View/News";
 import Footer from "./Main/Footer";
-import Login from "./View/Login";
+import Login from "./View/Login/Login";
 import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
+import LoginHandeler from "./View/Login/LoginHandler";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
           <Route path="/search" element={<SearchResult />} />
+          <Route path="/kakaoLogin" element={<LoginHandeler />} />
         </Routes>
         <Footer />
       </Router>
