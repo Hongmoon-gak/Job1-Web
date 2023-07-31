@@ -45,14 +45,21 @@ function Preview(props) {
     .slice(offset, offset + limit)
     .map((data) => {
       return (
-        <div className="cArtView" key={data.id}>
-          <PrevArt
-            title={data.title}
-            type={props.type}
-            link=""
-            likes={data.likes}
-            date={data.date}
-          />
+        <div>
+          <div className="cArtView" key={data.id}>
+            <PrevArt
+              title={data.title}
+              type={props.type}
+              link=""
+              likes={data.likes}
+              date={data.date}
+            />
+            <div
+              className={props.view === "detail" ? "cArtCont" : "cArtContNone"}
+            >
+              {data.contents}
+            </div>
+          </div>
           <hr />
         </div>
       );

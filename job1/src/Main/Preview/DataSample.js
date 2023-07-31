@@ -148,7 +148,8 @@ export const post = [
     likes: "5",
     date: "2023-09-01",
     type: "community",
-    contents: "취약계층이 어쩌구 저쩌구..",
+    contents:
+      "취약계층이 어쩌구 저쩌구.을아ㅓ랑린어ㅣㄹㄴ어ㅣ런이ㅏ러ㅣㄴ아ㅓ린어ㅣ렁니ㅏ러ㅣㄴ아ㅓ린어리ㅓㅣ렁나ㅣ러ㅣㅏㅇ너리ㅏㅇ너리ㅏ어니렁널인",
     author: "author",
     tags: "취업",
     views: "45",

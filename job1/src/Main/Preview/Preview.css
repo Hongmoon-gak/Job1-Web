@@ -85,9 +85,15 @@ hr {
 }
 
 /* PrevArt */
+.cArtView {
+  position: relative;
+  width: 54.3125rem;
+  padding-left: 1.61rem;
+}
+
 .cArticle {
   display: flex;
-  width: 54.3125rem;
+
   height: 3rem;
   flex-shrink: 0;
 
@@ -103,8 +109,7 @@ hr {
   line-height: 1.5rem;
 
   position: absolute;
-  left: 1.61rem;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .cLikes {
@@ -119,7 +124,7 @@ hr {
   flex-shrink: 0;
 
   position: relative;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .cLikeIconNone {
@@ -148,7 +153,26 @@ hr {
   line-height: 1.5rem;
 
   position: absolute;
-  left: 46.69rem;
+  left: 44.69rem;
+}
+
+.cArtCont {
+  width: 49.8125rem;
+  height: 3.47244rem;
+  flex-shrink: 0;
+
+  color: #7d7d7d;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cArtContNone {
+  display: none;
 }
 
 .cTitleHref {
