@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom/dist';
 import TagComponent from './TagComponent';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ const TagsContainer = styled.div`
   margin: 3rem;
 `;
 
-export default function Tag(){
+export default function Tag(props){
   const tagsData = [
     { id: 1, text: '취업', imageUrl: "/Images/tagImage/tomato.png", alt: "토마토" },
     { id: 2, text: '실업 / 퇴직', imageUrl: "/Images/tagImage/eggplant.png", alt: "가지" },
@@ -20,10 +21,14 @@ export default function Tag(){
     { id: 7, text: '취약계층', imageUrl: "/Images/tagImage/onion.png", alt: "양파" }
   ];
   
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(props.tag);
+  const navigate = useNavigate();
+  const getQuery = new URL(window.location.href).searchParams.get("query");
+  const [query, setQuery] = useState(getQuery || "");
   
   const handleImageClick = (index) => {
     setSelectedImageIndex(index === selectedImageIndex ? null : index);
+    navigate(`/search?query=${query}&tag=${selectedImageIndex}`)
   }
   
   return (

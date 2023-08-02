@@ -6,14 +6,16 @@ import Table from "./TestCp";
 import "./SearchBar.css"
 
 function SearchBar(){
-    const [query, setQuery] = useState("");
+    const getTag = new URL(window.location.href).searchParams.get("tag");
+    const getQuery = new URL(window.location.href).searchParams.get("query");
+    const [query, setQuery] = useState(getQuery || "");
     const keys = ["title", "content"];
     const onChange = (e) => {
         setQuery(e.target.value.toLowerCase());
     }
     const search = (data) => {
         return data.filter((item) =>
-            keys.some((key) => item[key].toLowerCase().includes(query))
+            keys.some((key) => item[key].toLowerCase().includes(query, getTag))
         );
     };
 
@@ -21,8 +23,8 @@ function SearchBar(){
     const submit = (e) => {
         e.preventDefault();
         // 검색 결과 시 이동할 url (임시로 지정)
-        navigate(`/search?query=${encodeURIComponent(query)}`);
-        console.log(query);
+        navigate(`/search?query=${encodeURIComponent(query)}&tag=${getTag}`);
+        console.log(query, getTag);
     }
     
     return(
