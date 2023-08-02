@@ -18,7 +18,7 @@ function SearchBar(){
             keys.some((key) => item[key].toLowerCase().includes(query, getTag))
         );
     };
-
+    
     const navigate = useNavigate();
     const submit = (e) => {
         e.preventDefault();

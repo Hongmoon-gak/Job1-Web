@@ -27,8 +27,14 @@ export default function Tag(props){
   const [query, setQuery] = useState(getQuery || "");
   
   const handleImageClick = (index) => {
-    setSelectedImageIndex(index === selectedImageIndex ? null : index);
-    navigate(`/search?query=${query}&tag=${selectedImageIndex}`)
+    if (index === selectedImageIndex){
+      setSelectedImageIndex(null);
+      navigate(`/search?query=${getQuery}&tag=${null}`)
+    }
+    else{
+      setSelectedImageIndex(index);
+      navigate(`/search?query=${getQuery}&tag=${index}`)
+    }
   }
   
   return (
