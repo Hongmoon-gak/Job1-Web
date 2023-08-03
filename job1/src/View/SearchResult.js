@@ -5,9 +5,14 @@ function SearchResult() {
   return (
     <div>
       <Search />
-      <Preview typeTitle="법률" resultNum="30" type="laws" />
-      <Preview typeTitle="새 소식" resultNum="30" type="news" />
-      <Preview typeTitle="게시판" resultNum="30" type="community" />
+      <Preview typeTitle="법률" resultNum="30" type="laws" view="search" />
+      <Preview typeTitle="새 소식" resultNum="30" type="news" view="search" />
+      <Preview
+        typeTitle="게시판"
+        resultNum="30"
+        type="community"
+        view="search"
+      />
     </div>
   );
 }
