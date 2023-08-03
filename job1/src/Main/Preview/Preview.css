@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Noto+Sans+KR:wght@500&family=Noto+Serif+KR&display=swap");
 
 hr {
   margin: 0 auto;
@@ -25,12 +24,16 @@ hr {
 
 .bar {
   display: flex;
-  justify-content: space-between;
   height: 3rem;
 }
 
 .cType {
   display: flex;
+  margin-right: auto;
+
+  :hover {
+    cursor: pointer;
+  }
 }
 
 .selectedBtn {
@@ -54,7 +57,7 @@ hr {
   text-align: center;
   font-size: 1rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 3rem;
 
   width: 4.258rem;
@@ -83,12 +86,24 @@ hr {
   font-style: normal;
   font-weight: 700;
   line-height: 1.5rem;
+
+  margin-left: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /* PrevArt */
+.cArtView {
+  position: relative;
+  width: 54.3125rem;
+  padding-left: 1.61rem;
+}
+
 .cArticle {
   display: flex;
-  width: 54.3125rem;
+
   height: 3rem;
   flex-shrink: 0;
 
@@ -104,8 +119,7 @@ hr {
   line-height: 1.5rem;
 
   position: absolute;
-  left: 1.61rem;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .cLikes {
@@ -120,7 +134,7 @@ hr {
   flex-shrink: 0;
 
   position: relative;
-  top: 0.75rem;
+  top: 1rem;
 }
 
 .cLikeIconNone {
@@ -149,7 +163,26 @@ hr {
   line-height: 1.5rem;
 
   position: absolute;
-  left: 46.69rem;
+  left: 44.69rem;
+}
+
+.cArtCont {
+  width: 49.8125rem;
+  height: 3.47244rem;
+  flex-shrink: 0;
+
+  color: #7d7d7d;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cArtContNone {
+  display: none;
 }
 
 .cTitleHref {
@@ -193,4 +226,45 @@ hr {
   line-height: 4.5rem;
 
   text-decoration: none;
+}
+
+/**Pagination*/
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.pageBtn {
+  border: 1px solid #979797;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: 0 0.25rem;
+
+  text-align: center;
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 120% */
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[aria-current] {
+    background: #31892f;
+    color: #fff;
+    font-weight: bold;
+    cursor: revert;
+    transform: revert;
+  }
+}
+
+#setPageBtn {
+  background: #f0f4f0;
 }

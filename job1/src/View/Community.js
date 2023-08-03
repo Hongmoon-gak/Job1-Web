@@ -2,14 +2,14 @@ import Search from "./Search";
 import MoreInfo from "../Main/MoreInfo";
 import Preview from "../Main/Preview/Preview";
 
-function Laws() {
+function Board() {
   return (
     <div>
       <Search />
-      <Preview typeTitle="법률" type="laws" view="detail" />
+      <Preview typeTitle="게시판" type="community" view="detail" />
       <MoreInfo />
     </div>
   );
 }
 
-export default Laws;
+export default Board;
