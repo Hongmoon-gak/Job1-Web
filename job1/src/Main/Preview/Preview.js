@@ -98,7 +98,7 @@ function Preview(props) {
             총 {itemSearch.length}건의 검색 결과가 있습니다.
           </p>
         )}
-        {props.type === "community" ? (
+        {props.type === "community" && props.view !== "search" ? (
           <button className="cWriteBtn" onClick={navigateToWrite}>
             글쓰기
           </button>
