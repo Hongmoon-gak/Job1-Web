@@ -11,11 +11,13 @@ import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
 import LoginHandeler from "./View/Login/LoginHandler";
+import ScrollToTop from "./ScrollTop";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
