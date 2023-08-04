@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom/dist';
 import TagComponent from './TagComponent';
 import styled from 'styled-components';
@@ -26,14 +26,18 @@ export default function Tag(props){
   const getQuery = new URL(window.location.href).searchParams.get("query");
   const [query, setQuery] = useState(getQuery || "");
   
+  useEffect(() => { // useEffect 훅을 통해 selectedImageIndex 값이 변할 때마다 setQuery실행
+    setQuery(getQuery || "");
+  }, [selectedImageIndex, getQuery]);
+
   const handleImageClick = (index) => {
     if (index === selectedImageIndex){
       setSelectedImageIndex(null);
-      navigate(`/search?query=${getQuery}&tag=${null}`)
+      navigate(`/search?query=${query}&tag=${null}`)
     }
     else{
       setSelectedImageIndex(index);
-      navigate(`/search?query=${getQuery}&tag=${index}`)
+      navigate(`/search?query=${query}&tag=${index}`)
     }
   }
   
