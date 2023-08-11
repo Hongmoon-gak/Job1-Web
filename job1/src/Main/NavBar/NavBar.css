@@ -19,7 +19,8 @@
 }
 
 .navmenus-list{
-    padding: 3rem;
+    margin: 2rem;
+    padding: 1rem;
     text-decoration: none;
     color: #000;
     text-align: center;
@@ -28,7 +29,20 @@
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.125rem;
+}
+.navmenus-list1{ /*활성화된 경우*/
+    margin: 2rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: #000;
+    background: #E4EEE3;
+    border-radius: 2rem;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: DM Sans;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .navuser-container{

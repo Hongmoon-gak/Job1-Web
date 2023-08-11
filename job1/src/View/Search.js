@@ -1,10 +1,12 @@
 
+import { useParams } from "react-router-dom/dist";
 import SearchBar from "../Component/SearchBar";
-import Tag from "../Tags/Tag";
+import Tag from "../Component/Tag";
 
 import styled from 'styled-components';
 
 function Search(){
+    const { query, tag } = useParams();
     return(
         <SearchContainer>
             <h2>나의 Job을 슬기롭게 일구다</h2>
