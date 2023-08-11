@@ -24,11 +24,18 @@ export default function Tag(props){
   const [selectedImageIndex, setSelectedImageIndex] = useState(props.tag);
   const navigate = useNavigate();
   const getQuery = new URL(window.location.href).searchParams.get("query");
+  const getTag = new URL(window.location.href).searchParams.get("tag");
   const [query, setQuery] = useState(getQuery || "");
   
   useEffect(() => { // useEffect 훅을 통해 selectedImageIndex 값이 변할 때마다 setQuery실행
     setQuery(getQuery || "");
   }, [selectedImageIndex, getQuery]);
+  
+  useEffect(() => {
+    if (getTag !== null) {
+      setSelectedImageIndex(Number(getTag));
+    }
+  }, []);
 
   const handleImageClick = (index) => {
     if (index === selectedImageIndex){
