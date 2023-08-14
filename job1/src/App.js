@@ -12,6 +12,7 @@ import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
 import LoginHandler from "./View/Login/LoginHandler";
 import KakaoLoginHandler from "./View/Login/KakaoLoginHandler";
+import SignUp from "./View/Login/SignUp";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/search" element={<SearchResult />} />
           <Route path="/kakaoLogin" element={<KakaoLoginHandler />} />
           <Route path="/job1Login" element={<LoginHandler />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
         <Footer />
       </Router>

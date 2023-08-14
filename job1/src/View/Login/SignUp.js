@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { BaseUrl } from "../API/Api";
+// import { BaseUrl } from "../API/Api";
 import { styled } from "styled-components";
 
 const SignUpContainer = styled.div`
@@ -13,7 +13,10 @@ const SignUpContainer = styled.div`
 `
 
 function SignUp(){
-  const [registerData, setRegisterData] = useState({
+  return(
+    <div>fdfd</div>
+  )
+/*  const [registerData, setRegisterData] = useState({
     id: "",
     pw: "",
     confirmPw: "",
@@ -177,7 +180,7 @@ function SignUp(){
           <button type="submit">가입하기</button>
         </form>
     </SignUpContainer>
-  )
+  )*/
 }
 
 export default SignUp;

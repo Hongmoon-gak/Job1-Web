@@ -2,7 +2,10 @@ import React from 'react'
 
 function LoginHandler() {
   return (
-    <div>LoginHandler</div>
+    <div>
+      <a>로그인</a>
+      <a href='/signUp'>회원가입</a>
+    </div>
   )
 }
 
