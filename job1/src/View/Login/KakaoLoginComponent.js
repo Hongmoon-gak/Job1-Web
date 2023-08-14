@@ -5,7 +5,7 @@ function KakaoLoginComponent(){
   return(
     <div>
       <a href={KAKAO_AUTH_URL}>
-        <img src='/Images/kakao_login.png' alt='kakao' width='330'/>
+        <img src='/Images/kakao_login.png' alt='kakao' width='413px' height='68px'/>
       </a>
     </div>
   );
