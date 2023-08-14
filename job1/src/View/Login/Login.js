@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import LoginComponent from './LoginComponent';
+import KakaoLoginComponent from './KakaoLoginComponent';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ function Login(){
   return(
     <LoginContainer>
       <LoginComponent/>
+      <KakaoLoginComponent/>
     </LoginContainer>
   );
 }

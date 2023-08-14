@@ -10,7 +10,8 @@ import Login from "./View/Login/Login";
 import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
-import LoginHandeler from "./View/Login/LoginHandler";
+import LoginHandler from "./View/Login/LoginHandler";
+import KakaoLoginHandler from "./View/Login/KakaoLoginHandler";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
           <Route path="/search" element={<SearchResult />} />
-          <Route path="/kakaoLogin" element={<LoginHandeler />} />
+          <Route path="/kakaoLogin" element={<KakaoLoginHandler />} />
+          <Route path="/job1Login" element={<LoginHandler />} />
         </Routes>
         <Footer />
       </Router>
