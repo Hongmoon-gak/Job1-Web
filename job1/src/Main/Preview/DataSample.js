@@ -7,7 +7,7 @@ export const post = [
     type: "laws",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "1",
     views: "45",
   },
   {
@@ -18,7 +18,7 @@ export const post = [
     type: "laws",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "1",
     views: "45",
   },
   {
@@ -29,7 +29,7 @@ export const post = [
     type: "news",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "2",
     views: "45",
   },
   {
@@ -40,7 +40,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "2",
     views: "45",
   },
   {
@@ -51,7 +51,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "3",
     views: "45",
   },
   {
@@ -62,7 +62,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "4",
     views: "45",
   },
   {
@@ -73,7 +73,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "4",
     views: "45",
   },
   {
@@ -84,7 +84,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "5",
     views: "45",
   },
   {
@@ -95,7 +95,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "5",
     views: "45",
   },
   {
@@ -106,7 +106,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "6",
     views: "45",
   },
   {
@@ -117,7 +117,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "6",
     views: "45",
   },
   {
@@ -128,7 +128,7 @@ export const post = [
     type: "community",
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
-    tags: "취업",
+    tags: "0",
     views: "45",
   },
   {
@@ -140,7 +140,7 @@ export const post = [
     contents: "취약계층이 어쩌구 저쩌구..",
     author: "author",
     tags: "취업",
-    views: "45",
+    views: "0",
   },
   {
     id: 14,
@@ -151,7 +151,7 @@ export const post = [
     contents:
       "취약계층이 어쩌구 저쩌구.을아ㅓ랑린어ㅣㄹㄴ어ㅣ런이ㅏ러ㅣㄴ아ㅓ린어ㅣ렁니ㅏ러ㅣㄴ아ㅓ린어리ㅓㅣ렁나ㅣ러ㅣㅏㅇ너리ㅏㅇ너리ㅏ어니렁널인",
     author: "author",
-    tags: "취업",
+    tags: "0",
     views: "45",
   },
 ];
