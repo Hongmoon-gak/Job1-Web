@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+job1/src/View/Login/KakaoLoginData.js
+node_modules

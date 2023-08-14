@@ -1,17 +1,26 @@
 import "./Preview.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function PrevArt(props) {
+  const cLikeIcon = props.type !== "community" ? "cLikeIconNone" : "cLikeIcon";
+  const cLikeNum = props.type !== "community" ? "cLikeNumNone" : "cLikeNum";
+
   return (
     <div className="cArticle">
       <div className="cTitle">
-        <a href={props.href} className="cTitleHref">
-          <p>{props.title}</p>
-        </a>
+        <Link to={`/${props.type}/${props.link}`} className="cTitleHref">
+          {props.title}
+        </Link>
       </div>
-      <p className="cLikes">
-        <i class="far fa-thumbs-up"></i>
-        {props.likes}
-      </p>
+      <div className="cLikes">
+        <img
+          src="/Images/CommunityLike.png"
+          alt="likes"
+          className={cLikeIcon}
+        ></img>
+        <p className={cLikeNum}>{props.likes}</p>
+      </div>
       <p className="cDate">{props.date}</p>
     </div>
   );
