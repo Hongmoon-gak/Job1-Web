@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom/dist';
 import TagComponent from './TagComponent';
 import styled from 'styled-components';
+import tagsData from './TagsData';
 
 const TagsContainer = styled.div`
   display: flex;
