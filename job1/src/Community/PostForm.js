@@ -6,6 +6,8 @@ import styled from "styled-components";
 
 function PostForm() {
   //const getAuthor = axios.get(`${}/url`,{id});
+  const getPost = axios.get("http://43.201.209.169/api/post");
+  console.log(getPost);
   const [post, setPost] = useState({
     id:'',
     title: '',
@@ -41,16 +43,14 @@ function PostForm() {
       ...post,
       date: currentTime,
     })
-    /*
     try{
-      const res = await axios.post(`${}/url`, {newPost})
+      const res = await axios.post("http://43.201.209.169/write", {newPost})
       alert('등록되었습니다');
       navigate('/community'); // 커뮤니티, 이전페이지, 작성한 게시글 중 어디로 링크할지 논의 필요
       console.log({ ...post, date: currentTime });
     } catch(err){
       alert('오류가 발생했습니다. 다시 시도해주세요.')
     }
-    */
   };
 
   const cancel = (e) => {
