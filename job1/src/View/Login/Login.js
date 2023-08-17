@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import LoginComponent from './LoginComponent';
 import KakaoLoginComponent from './KakaoLoginComponent';
@@ -46,23 +46,21 @@ const LoginText = styled.p`
 `;
 
 const LoginInput = styled.input`
-  width: 25.8125rem;
+  width: 23.5325rem;
   height: 3.4375rem;
   border-radius: 0.625rem;
   border: 1px solid rgba(0, 0, 0, 0.10);
   background: #FFF;
   margin: 1rem 0rem 0rem 0rem;
+  font-family: Karla;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7875rem;
+  padding: 0rem 0rem 0rem 2.28rem;
   
   &::placeholder{
-    display: flex;
-    height: 3.4375rem;
     color: #A7A7A7;
-    font-family: Karla;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.7875rem;
-    padding: 0rem 0rem 0rem 2.28rem;
   }
 `;
 
@@ -96,22 +94,36 @@ const botDiv = styled.div`
 
 function Login(){
   const navigate = useNavigate();
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   
   function handleLoginClick(){
-    navigate('/job1Login');
+    // 아이디 비번 확인 후 로그인 하는 코드
   }
   
   function handleSignUpClick(){
     navigate('/signUp');
   }
   
+  console.log(id, pw);
+  
   return(
     <LoginView>
       <LoginTitle>로그인</LoginTitle>
       <LoginContainer>
         <LoginText>로그인 후 이용해주세요!</LoginText>
-        <LoginInput type='text' placeholder='ID'></LoginInput>
-        <LoginInput type='password' placeholder='PASSWORD'></LoginInput>
+        <LoginInput 
+          value={id}
+          type='text' 
+          placeholder='ID'
+          onChange={(e) => setId(e.target.value)}
+        />
+        <LoginInput 
+          value={pw}
+          type='password' 
+          placeholder='PASSWORD'
+          onChange={(e) => setPw(e.target.value)}
+        />
         <LoginButtonGroup>
           <LoginButton login onClick={handleLoginClick}>로그인</LoginButton>
           <LoginButton onClick={handleSignUpClick}>회원가입</LoginButton>
