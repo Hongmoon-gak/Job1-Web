@@ -1,21 +1,204 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 // import { BaseUrl } from "../API/Api";
 import { styled } from "styled-components";
 
+const SignUpView = styled.div`
+  background: #F0F4F0
+`;
+
+const SignUpTitle = styled.p`
+  color: var(--heading, #212B27);
+  text-align: center;
+  font-family: Karla;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.925rem;
+  
+  padding: 4.5rem 0 ${({bot}) => (bot ? '12.75rem' : '0')} 0;
+`;
+
 const SignUpContainer = styled.div`
+  width: 33.5625rem;
+  height: 38.625rem;
+  border-radius: 1.875rem;
+  background: #FFF;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+`;
+
+const SignUpText = styled.p`
+  width: 33.5625rem;
+  color: #212B27;
+  text-align: center;
+  font-family: Karla;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.925rem;
+  margin: 2.13rem 0rem 0rem 0rem;
+`;
+
+const SignUpInput = styled.input`
+  width: ${({isPassword}) => (isPassword ? '23.595rem' : '12.9075rem')};
+  height: 3.4375rem;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #FFF;
+  margin: 1rem 0rem 0rem 3.87rem;
+  font-family: Karla;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7875rem;
+  padding: 0rem 0rem 0rem 2.28rem;
+  
+  &::placeholder{
+    color: #A7A7A7;
+  }
+`;
+
+const DataCheck = styled.button`
+  margin: 1rem 0rem 0rem 1.06rem;
+  width: 9.625rem;
+  height: 3.4375rem;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #A7A7A7;
+  justify-content: center;
+  display: flex;
+  color: #FFF;
+  font-family: Karla;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  align-items: center;
+`;
+
+const PasswordCheck = styled.p`
+  display: flex;
+  width: 29.745rem;
+  height: 1.5rem;
+  margin: 0.56rem 0 0.44rem 0;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-`
+  color: ${({correct}) => (correct ? '#31892F' : '#CC4E4F')};
+  text-align: right;
+  font-family: Karla;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7875rem;
+`;
+
+const DoneButton = styled.button`
+  width: 12.5rem;
+  height: 3.6875rem;
+  background: #31892F;
+  border-radius: 0.625rem;
+  color: #FFF;
+  border: 1px solid #31892F;
+  text-align: center;
+  font-family: Karla;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.7875rem;
+  margin: 1.62rem 0 0 0;
+  cursor : pointer;
+  margin: 1.87rem 0 2.94rem 10.56rem;
+`;
 
 function SignUp(){
+  const navigate = useNavigate();
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const [pwCheck, setPwCheck] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
+  const [isMatched, setIsMatched] = useState('');
+  const [isEmpty, setIsEmpty] = useState('');
+  
+  useEffect(()=> {
+    if (pw === pwCheck && pw !== '' && pwCheck !== ''){
+      setIsMatched(true);
+      setIsEmpty(false);
+    }
+    else{
+      setIsMatched(false);
+      setIsEmpty(pw === '' && pwCheck === '' ? true : false);
+    }
+  })
+  
+  function handleDoneClick(){
+    navigate('/login');
+  }
+  
+  function handleIdCheck(){
+  }
+  
+  function handleNicknameCheck(){
+  }
+  
+  function handleEmailCheck(){
+  }
+  
   return(
-    <div>fdfd</div>
-  )
+    <SignUpView>
+      <SignUpTitle>회원가입</SignUpTitle>
+      <SignUpContainer>
+        <SignUpText>정보를 입력해주세요!</SignUpText>
+        <SignUpInput 
+          value={id}
+          type='text' 
+          placeholder='아이디'
+          onChange={(e) => setId(e.target.value)}
+        />
+        <DataCheck onClick={handleIdCheck}>중복 확인</DataCheck>
+        <SignUpInput 
+          value={pw}
+          type='password' 
+          placeholder='비밀번호'
+          onChange={(e) => setPw(e.target.value)}
+          isPassword
+        />
+        <SignUpInput 
+          value={pwCheck}
+          type='password' 
+          placeholder='비밀번호 확인'
+          onChange={(e) => setPwCheck(e.target.value)}
+          isPassword
+        />
+        <PasswordCheck correct={isMatched ? 1 : 0}>
+          {isMatched ? '※ 비밀번호 확인 완료' : (isEmpty ? '' : '※ 비밀번호가 다릅니다.')}
+        </PasswordCheck>
+        <SignUpInput 
+          value={nickname}
+          type='text' 
+          placeholder='닉네임'
+          onChange={(e) => setNickname(e.target.value)}
+        />
+        <DataCheck onClick={handleNicknameCheck}>중복 확인</DataCheck>
+        <SignUpInput 
+          value={email}
+          type='text' 
+          placeholder='이메일'
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <DataCheck onClick={handleEmailCheck}>중복 확인</DataCheck>
+        <DoneButton onClick={handleDoneClick}>완료</DoneButton>
+      </SignUpContainer>
+      <SignUpTitle bot/>
+    </SignUpView>
+  );
+}
+
+export default SignUp;
+
 /*  const [registerData, setRegisterData] = useState({
     id: "",
     pw: "",
@@ -181,6 +364,3 @@ function SignUp(){
         </form>
     </SignUpContainer>
   )*/
-}
-
-export default SignUp;

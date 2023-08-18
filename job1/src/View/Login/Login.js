@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import LoginComponent from './LoginComponent';
 import KakaoLoginComponent from './KakaoLoginComponent';
 import { useNavigate } from 'react-router-dom';
 
 const LoginView = styled.div`
   background: #F0F4F0
-  
 `;
 
 const LoginTitle = styled.p`
@@ -31,8 +29,6 @@ const LoginContainer = styled.div`
   align-items: center;
   margin: 0 auto;
 `;
-
-// align-items: center 돼있어서 로그인이랑 회원가입이 안 떨어지는데 이거 처리해야 함
 
 const LoginText = styled.p`
   color: #212B27;
@@ -99,6 +95,7 @@ function Login(){
   
   function handleLoginClick(){
     // 아이디 비번 확인 후 로그인 하는 코드
+    navigate('/loginJob1');
   }
   
   function handleSignUpClick(){
