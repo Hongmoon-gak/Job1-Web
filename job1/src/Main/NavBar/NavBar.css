@@ -1,73 +1,99 @@
-.nav-container{
-    top: 0;
-    left: 0;
-    width: calc(100% - 20%); /*반응형 수정할 수도 있어서 calc 사용*/
-    height: 4.6875rem;
-    flex-shrink: 0;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
+.nav-container {
+  top: 0;
+  left: 0;
+  width: calc(100% - 20%); /*반응형 수정할 수도 있어서 calc 사용*/
+  height: 4.6875rem;
+  flex-shrink: 0;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.navitems-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4.375rem;
+.navitems-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4.375rem;
 }
 
-.navmenus-list{
-    margin: 2rem;
-    padding: 1rem;
-    text-decoration: none;
-    color: #000;
-    text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: DM Sans;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
+.navmenus-list {
+  margin: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: DM Sans;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
 }
-.navmenus-list1{ /*활성화된 경우*/
-    margin: 2rem;
-    padding: 1rem;
-    text-decoration: none;
-    color: #000;
-    background: #E4EEE3;
-    border-radius: 2rem;
-    text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: DM Sans;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.navuser-container{
-    display: flex;
-    justify-content: space-between;
+.navmenus-list1 {
+  /*활성화된 경우*/
+  margin: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  background: #e4eee3;
+  border-radius: 2rem;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: DM Sans;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.navuser-list{
-    padding: 1rem;
+.navuser-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-#nav-login{
-    width: 4rem;
-    height: 1em;
-    border-radius: 2rem;
-    background: var(--my-green, #31892F);
-    text-decoration: none;
-    color: #FFF;
-    text-align: center;
-    font-family: DM Sans;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
+.navuser-list {
+  padding: 1rem;
 }
 
-#nav-mypage{
-    display: none;
+#nav-login {
+  width: 4rem;
+  height: 1em;
+  border-radius: 2rem;
+  background: var(--my-green, #31892f);
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+
+  /*임시 설정*/
+  display: none;
+}
+
+/*임시 설정*/
+#nav-mypage {
+  /* display: none; */
+  display: flex;
+  text-decoration: none;
+  color: #000;
+}
+
+#user-circle {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+}
+
+.user-name {
+  font-family: DM Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem; /* 150% */
+}
+
+#user-sir {
+  color: #727272;
+  margin-left: 0.5rem;
 }

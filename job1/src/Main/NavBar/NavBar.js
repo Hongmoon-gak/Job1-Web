@@ -50,11 +50,18 @@ function NavBar() {
         >
           로그인
         </Link>
-        <div className="navuser-list" id="nav-mypage">
-          <Link onClick={() => setNav(0)} to={"/mypage"}>
-            마이페이지
-          </Link>
-        </div>
+        <Link
+          onClick={() => setNav(0)}
+          className="navuser-list"
+          id="nav-mypage"
+          to="/mypage"
+        >
+          <i class="far fa-user-circle" id="user-circle"></i>
+          <div className="user-name">홍길동</div>
+          <div className="user-name" id="user-sir">
+            님
+          </div>
+        </Link>
       </div>
     </div>
   );
