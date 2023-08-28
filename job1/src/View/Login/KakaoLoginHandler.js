@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from "axios";
 import { REDIRECT_URI } from './KakaoLoginData';
 
-function LoginHandeler(props){
+function KakaoLoginHandeler(props){
   // 인가 코드를 변수 'code'에 저장하는 코드
   const navigate = useNavigate();
   const code = new URL(window.location.href).searchParams.get("code");
@@ -38,4 +38,4 @@ function LoginHandeler(props){
   );
 }
 
-export default LoginHandeler
+export default KakaoLoginHandeler

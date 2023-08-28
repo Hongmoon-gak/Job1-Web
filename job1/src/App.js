@@ -10,7 +10,9 @@ import Login from "./View/Login/Login";
 import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
-import LoginHandeler from "./View/Login/LoginHandler";
+import KakaoLoginHandler from "./View/Login/KakaoLoginHandler";
+import SignUp from "./View/Login/SignUp";
+import LoginJob1 from "./View/Login/LoginJob1";
 
 function App() {
   return (
@@ -22,11 +24,14 @@ function App() {
           <Route path="/laws" element={<Laws />} />
           <Route path="/community" element={<Community />} />
           <Route path="/news" element={<News />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/mypage/*" element={<MyPage />} />
+          <Route path="/mypage" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
           <Route path="/search" element={<SearchResult />} />
-          <Route path="/kakaoLogin" element={<LoginHandeler />} />
+          
+          <Route path="/login" element={<Login />} />
+          <Route path="/kakaoLogin" element={<KakaoLoginHandler />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/LoginJob1" element={<LoginJob1 />} />
         </Routes>
         <Footer />
       </Router>
