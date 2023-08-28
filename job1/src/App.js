@@ -23,7 +23,7 @@ function App() {
           <Route path="/community" element={<Community />} />
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/mypage/*" element={<MyPage />} />
           <Route path="/write" element={<Write />} />
           <Route path="/search" element={<SearchResult />} />
           <Route path="/kakaoLogin" element={<LoginHandeler />} />

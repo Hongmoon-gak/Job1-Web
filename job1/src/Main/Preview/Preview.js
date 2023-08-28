@@ -55,7 +55,11 @@ function Preview(props) {
               date={data.date}
             />
             <div
-              className={props.view === "detail" ? "cArtCont" : "cArtContNone"}
+              className={
+                props.view === "detail" || props.view === "mypage"
+                  ? "cArtCont"
+                  : "cArtContNone"
+              }
             >
               {data.contents}
             </div>
@@ -67,7 +71,7 @@ function Preview(props) {
 
   const navigate = useNavigate();
   const navigateToWrite = () => {
-    navigate("./write");
+    navigate("/write");
   };
 
   return (
@@ -95,10 +99,10 @@ function Preview(props) {
           </div>
         ) : (
           /* query === null ? null : */ <p className="resultNum">
-            총 {itemSearch.length}건의 검색 결과가 있습니다.
+            총 {itemSearch.length}건의 결과가 있습니다.
           </p>
         )}
-        {props.type === "community" ? (
+        {props.type === "community" && props.view !== "mypage" ? (
           <button className="cWriteBtn" onClick={navigateToWrite}>
             글쓰기
           </button>
@@ -106,19 +110,19 @@ function Preview(props) {
       </div>
       <hr />
       {itemSorted}
-      {props.view === "detail" ? (
+      {props.view === "search" ? (
+        <div className="previewBottom">
+          <Link to={`/${props.type}?query=${query}`} className="moreResult">
+            검색 결과 더 보기
+          </Link>
+        </div>
+      ) : props.view === "home" ? null : (
         <Pagination
           total={itemSearch.length}
           limit={limit}
           page={page}
           setPage={setPage}
         />
-      ) : props.view === "home" ? null : (
-        <div className="previewBottom">
-          <Link to={`/${props.type}?query=${query}`} className="moreResult">
-            검색 결과 더 보기
-          </Link>
-        </div>
       )}
     </div>
   );
