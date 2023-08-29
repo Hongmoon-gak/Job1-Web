@@ -47,24 +47,26 @@ export default MyPage;
 const OptionContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 `;
 
 const Option = styled.div`
   width: 10.625rem;
   height: 3.75rem;
-  flex-shrink: 0;
 
   border-radius: 3.125rem;
   border: 1px solid #d9d9d9;
   background: ${({ option }) => (option ? "#D9D9D9" : "#fff")};
 
   color: #000;
-  text-align: center;
   font-family: DM Sans;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 3rem; /* 120% */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   margin: 2rem 1rem;
 `;

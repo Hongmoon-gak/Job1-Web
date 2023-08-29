@@ -27,8 +27,8 @@ const SearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background: #f0f4f0;
 `;
 
