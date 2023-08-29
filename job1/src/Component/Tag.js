@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom/dist';
-import TagComponent from './TagComponent';
+import TagComponent, { PostTagComponent } from './TagComponent';
 import styled from 'styled-components';
 import tagsData from './TagsData';
 
@@ -42,7 +42,7 @@ export default function Tag(props){
   return (
     <TagsContainer>
       {tagsData.map((tag, index) => (
-        <TagComponent 
+        <PostTagComponent
           key={tag.id} 
           text={tag.text} 
           imageUrl={tag.imageUrl} 
