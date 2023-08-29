@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
+import { PostTagComponent } from "../Component/TagComponent";
+import tagsData from "../Component/TagsData";
 import styled from "styled-components";
 
 function PostForm() {
@@ -10,6 +12,7 @@ function PostForm() {
     id:'',
     title: '',
     contents: '',
+    // 태그도 전달하기
     author: '', //{getAuthor} 사용자 계정 토큰 받아오기
     date:'',
     likes: '0',
@@ -24,6 +27,16 @@ function PostForm() {
       [name]: value,
     });
   };
+
+  const [tagSelect, setTagSelect] = useState();
+  const handleTag = (index) => {
+    if (index === tagSelect){
+      setTagSelect(null);
+    }
+    else{
+      setTagSelect(index);
+    }
+  }
   
   const navigate = useNavigate();
   const submit = async (e) => {
@@ -83,7 +96,14 @@ function PostForm() {
         <P>태그 선택</P>
         <Hr/>
         <RowContainer>
-          {/* 태그 */}
+          {tagsData.map((tag, index) => (
+            <PostTagComponent 
+              key={tag.id} 
+              text={tag.text} 
+              selected={tagSelect === index}
+              onClick={() => handleTag(index)}
+            />
+          ))}
         </RowContainer>
         <Hr/>
         <RowContainer>
@@ -110,8 +130,11 @@ const ColContainer = styled.div`
 `
 const RowContainer = styled.div`
   display: flex;
+  width: 45rem;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: auto;
 `
 const Title = styled.input`
   width: 54.25rem;
