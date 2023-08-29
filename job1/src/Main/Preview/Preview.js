@@ -45,7 +45,13 @@ function Preview(props) {
   });
 
   const itemSorted = (
-    props.view !== "home" ? itemSearch : section === "hot" ? itemComm : item
+    props.view === "detail"
+      ? item
+      : props.view !== "home"
+      ? itemSearch
+      : section === "hot"
+      ? itemComm
+      : item
   )
     .sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
@@ -107,7 +113,8 @@ function Preview(props) {
           </div>
         ) : (
           /* query === null ? null : */ <p className="resultNum">
-            총 {itemSearch.length}건의 결과가 있습니다.
+            총 {props.view === "detail" ? item.length : itemSearch.length}건의
+            결과가 있습니다.
           </p>
         )}
         {props.type === "community" && props.view !== "mypage" ? (
@@ -120,13 +127,16 @@ function Preview(props) {
       {itemSorted}
       {props.view === "search" ? (
         <div className="previewBottom">
-          <Link to={`/${props.type}?query=${query}&tag=${tag}`} className="moreResult">
+          <Link
+            to={`/${props.type}?query=${query}&tag=${tag}`}
+            className="moreResult"
+          >
             검색 결과 더 보기
           </Link>
         </div>
       ) : props.view === "home" ? null : (
         <Pagination
-          total={itemSearch.length}
+          total={props.view === "detail" ? item.length : itemSearch.length}
           limit={limit}
           page={page}
           setPage={setPage}

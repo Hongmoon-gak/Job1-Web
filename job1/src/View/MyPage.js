@@ -69,4 +69,8 @@ const Option = styled.div`
   justify-content: center;
 
   margin: 2rem 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
