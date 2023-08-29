@@ -12,6 +12,7 @@ function Preview(props) {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get("query");
+  const tag = searchParams.get("tag");
 
   const [section, setSection] = useState("hot");
   const [page, setPage] = useState(1);
@@ -23,15 +24,22 @@ function Preview(props) {
       return data;
     }
   });
-  const itemSearch = item.filter((data) => {
-    if (query === null) return data;
-    else if (
-      data.title.toLowerCase().includes(query) ||
-      data.contents.toLowerCase().includes(query)
-    ) {
-      return data;
-    }
-  });
+  const itemSearch = item
+    .filter((data) => {
+      if (query === "") return data;
+      else if (
+        data.title.toLowerCase().includes(query) ||
+        data.contents.toLowerCase().includes(query)
+      ) {
+        return data;
+      }
+    })
+    .filter((data) => {
+      if (tag == "null") return data;
+      else if (tag === data.tags) {
+        return data;
+      }
+    });
   const itemComm = post.filter((data) => {
     if (Number(data.likes) >= 10) return data;
   });
@@ -112,7 +120,7 @@ function Preview(props) {
       {itemSorted}
       {props.view === "search" ? (
         <div className="previewBottom">
-          <Link to={`/${props.type}?query=${query}`} className="moreResult">
+          <Link to={`/${props.type}?query=${query}&tag=${tag}`} className="moreResult">
             검색 결과 더 보기
           </Link>
         </div>

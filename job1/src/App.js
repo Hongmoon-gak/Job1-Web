@@ -10,6 +10,7 @@ import Login from "./View/Login/Login";
 import MyPage from "./View/MyPage";
 import Write from "./View/Write";
 import SearchResult from "./View/SearchResult";
+import ScrollToTop from "./ScrollTop";
 import KakaoLoginHandler from "./View/Login/KakaoLoginHandler";
 import SignUp from "./View/Login/SignUp";
 import LoginJob1 from "./View/Login/LoginJob1";
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
